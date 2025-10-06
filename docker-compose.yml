@@ -1,0 +1,15 @@
+services:
+  result:
+    image: mstar5/result
+    build: .
+    depends_on:
+      - date
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
+
+  date:
+    image: mstar5/date
+    build:
+      dockerfile: date.dockerfile
